@@ -332,17 +332,5 @@ class  Notepad  extends JFrame {
 
     private JButton undoButton, redoButton;
 
-	
-    
-    public newMethod(){
-    	System.out.prinln("kaixo");
-    }
-
-	
-    
-    public newMethod2(){
-    	System.out.prinln("kaixo");
-    }
-
 
 }
