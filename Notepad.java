@@ -1,11 +1,11 @@
 import java.awt.*; 
 import java.awt.event.*; 
-import javax.swing.*; import javax.swing.undo.*; 
-import javax.swing.event.*; 
+import javax.swing.*; 
 
-public 
-
-class  Notepad  extends JFrame {
+/**
+ *A PUBLIC CLASS FOR NOTEPAD.JAVA
+ */
+public  class  Notepad  extends JFrame {
 	
 	private static final long serialVersionUID = 1;
 
@@ -60,8 +60,8 @@ class  Notepad  extends JFrame {
     }
 
 	
-
-     public Notepad  (){
+    //Constructor of Notepad
+    public Notepad(){
         //set the title for Notepad and set the size for it.
         setTitle("Untitled - JAVA??? Notepad");
         setSize(800,600);
@@ -292,23 +292,6 @@ class  Notepad  extends JFrame {
          */
         center.nCenter();
         show();
-    
-	    ediT.add(undoAction);
-	    ediT.add(redoAction);
-
-	    toolBar.addSeparator();
-	    toolBar.add(undoAction);
-	    toolBar.add(redoAction);
-	    toolBar.addSeparator();
-
-	    textArea.getDocument().addUndoableEditListener(new UndoableEditListener(){
-			    public void undoableEditHappened(UndoableEditEvent e){
-			    //Remember the edit and update the menus
-			    undo.addEdit(e.getEdit());
-			    undoAction.update();
-			    redoAction.update();
-			    }
-			    });
     }
 
 	
@@ -317,20 +300,6 @@ class  Notepad  extends JFrame {
         new Notepad();
 
     }
-
-	
-    //for using undo & redo
-    UndoManager undo = new UndoManager();
-
-	
-    UndoAction undoAction = new UndoAction(this);
-
-	
-    RedoAction redoAction = new RedoAction(this);
-
-	
-
-    private JButton undoButton, redoButton;
 
 
 }
